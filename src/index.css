@@ -1,13 +1,166 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* Colors */
+  --gray-900: #121214;
+  --gray-800: #202024;
+  --gray-400: #7C7C8A;
+  --gray-200: #C4C4CC;
+  --gray-100: #E1E1E6;
+  --cyan-500: #81D8F7;
+  --cyan-300: #5CC5EB;
+
+  /* Fonts */
+
+  /* Heading */
+  --heading-large: 32px;
+  --heading-medium: 24px;
+  --heading-small: 20px;
+  /* Text */
+  --text-large: 18px;
+  --text-medium: 16px;
+  --text-small: 14px;
+  /* Font Weight */
+  --bold: 700;
+  --semi-bold: 600;
+  --regular: 400;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 90vh;
+  overflow: hidden;
+
+  font-family: 'Inter', sans-serif;
+  background: #121214;
+  color: var(--gray-100);
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  cursor: default
+}
+
+.header img {
+  height: 128px;
+  animation: none;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text h1 {
+  margin: 0;
+  font-size: var(--heading-large);
+  font-weight: var(--bold)
+}
+
+.text span {
+  color: var(--gray-400);
+  font-size: var(--text-medium);
+  font-weight: var(--regular);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: var(--text-medium);
+  font-weight: var(--semi-bold);
+}
+
+.form label input {
+  padding: 12px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: var(--text-small);
+  width: 400px;
+  background: var(--gray-800);
+  color: var(--gray-100);
+}
+
+.form label input::placeholder {
+  color: var(--gray-400)
+}
+
+.form label input:focus {
+  outline: 2px solid var(--cyan-500);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--text-small);
+  color: var(--gray-200);
+  cursor: default;
+}
+
+.check {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  background: var(--gray-800);
+  cursor: pointer;
+}
+
+.btn-primary {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  color: var(--gray-900);
+  background: var(--cyan-500);
+  font-size: var(--text-medium);
+  font-weight: var(--semi-bold);
+  margin-top: 32px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.btn-primary:hover {
+  background: var(--cyan-300);
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer span {
+  font-size: var(--text-small);
+  color: var(--gray-400);
+  text-decoration: underline;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.footer span:hover {
+  color: var(--cyan-300);
+}
+
+@media (max-width: 768px) {
+  .form label input {
+    width: 280px;
+  }
 }
